@@ -1,0 +1,14 @@
+.next/
+node_modules/
+.vercel/
+package-lock.json
+pnpm-lock.yaml
+next-env.d.ts
+*.tsbuildinfo
+
+# Reference documents and agent instructions
+AGENTS.md
+CLAUDE.md
+경력기술서.md
+자기소개서.md
+포트폴리오.html
