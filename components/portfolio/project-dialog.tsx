@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import { ArrowUpRight, X } from 'lucide-react'
 import type { Project } from '@/data/portfolio'
+import { assetPath } from '@/lib/asset-path'
 
 export function ProjectDialog({
   project,
@@ -106,11 +107,11 @@ export function ProjectDialog({
           )}
           <Image
             unoptimized
-            src={
+            src={assetPath(
               animate && screenshot.animation
                 ? screenshot.animation
-                : screenshot.image
-            }
+                : screenshot.image,
+            )}
             width={1440}
             height={1000}
             alt={screenshot.label}

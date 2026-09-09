@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { assetPath } from '@/lib/asset-path'
 import './globals.css'
 
 const metadataBase =
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.png',
+        url: assetPath('/og.png'),
         width: 1200,
         height: 630,
         alt: '프론트엔드 개발자 | 포트폴리오',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     title: '프론트엔드 개발자 | 포트폴리오',
     description:
       '허닭몰 커머스 구축, 공통 패키지 개발, 게임 운영 리포트 자동화 프로젝트를 소개합니다.',
-    images: ['/og.png'],
+    images: [assetPath('/og.png')],
   },
 }
 

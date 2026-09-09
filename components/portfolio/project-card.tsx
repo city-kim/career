@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/data/portfolio'
+import { assetPath } from '@/lib/asset-path'
 import { Reveal } from './reveal'
 
 export function ProjectCard({
@@ -36,11 +37,11 @@ export function ProjectCard({
               <Image
                 unoptimized
                 className="w-full object-cover object-top"
-                src={
+                src={assetPath(
                   animate && project.animation
                     ? project.animation
-                    : project.image
-                }
+                    : project.image,
+                )}
                 alt={`${project.title} 프로젝트 화면`}
                 width={1600}
                 height={1000}
