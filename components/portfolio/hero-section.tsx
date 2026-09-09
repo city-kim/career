@@ -5,7 +5,7 @@ import { TypingRole } from './typing-role'
 export function HeroSection() {
   return (
     <section
-      className="mx-auto w-full max-w-6xl px-5 sm:px-8 relative flex min-h-svh items-center justify-center pt-22 pb-44 text-center sm:pt-36 sm:pb-34"
+      className="relative mx-auto flex min-h-svh w-full max-w-6xl items-center justify-center px-5 pt-22 pb-44 text-center sm:px-8 sm:pt-36 sm:pb-34"
       id="home"
     >
       <div className="w-full">
@@ -25,13 +25,13 @@ export function HeroSection() {
         </p>
         <div className="mt-10 flex animate-rise justify-center gap-4 motion-reduce:animate-none [animation-delay:300ms]">
           <a
-            className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-3 rounded-lg border px-5 py-2.5 text-sm transition duration-200 hover:-translate-y-0.5 motion-reduce:translate-y-0 motion-reduce:scale-100 border-transparent bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white hover:shadow-lg hover:shadow-zinc-500/20"
+            className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-3 rounded-lg border border-transparent bg-zinc-900 px-5 py-2.5 text-sm text-white transition duration-200 hover:-translate-y-0.5 hover:bg-zinc-700 hover:shadow-lg hover:shadow-zinc-500/20 motion-reduce:translate-y-0 motion-reduce:scale-100 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
             href="#work"
           >
             프로젝트 보기 <ArrowDown size={16} />
           </a>
           <a
-            className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-3 rounded-lg border px-5 py-2.5 text-sm transition duration-200 hover:-translate-y-0.5 motion-reduce:translate-y-0 motion-reduce:scale-100 border-zinc-200 bg-white hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800"
+            className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-3 rounded-lg border border-zinc-300 bg-white/55 px-5 py-2.5 text-sm backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-white/80 motion-reduce:translate-y-0 motion-reduce:scale-100 dark:border-zinc-700 dark:bg-zinc-900/60 dark:hover:bg-zinc-800"
             href="#contact"
           >
             연락하기
