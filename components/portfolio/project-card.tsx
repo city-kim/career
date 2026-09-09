@@ -1,28 +1,51 @@
 import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 import type { Project } from '@/data/portfolio'
 import { Reveal } from './reveal'
 
 export function ProjectCard({
   project,
   featured,
+  onOpen,
+  animate,
 }: {
   project: Project
   featured: boolean
+  onOpen: () => void
+  animate: boolean
 }) {
   return (
     <Reveal className={featured ? 'md:col-span-2' : ''}>
       <article
-        className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition duration-300 hover:border-zinc-400 hover:ring-2 hover:ring-zinc-400/25 hover:ring-offset-2 hover:ring-offset-white dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-400 dark:hover:ring-offset-zinc-950 `}
+        className={`project-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition duration-300 hover:border-zinc-400 hover:ring-2 hover:ring-zinc-400/25 hover:ring-offset-2 hover:ring-offset-white dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-400 dark:hover:ring-offset-zinc-950 `}
       >
         {project.image && (
-          <div className="h-48 overflow-hidden">
-            <Image
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              src={project.image}
-              alt={`${project.title} 프로젝트 화면`}
-              width={1600}
-              height={1200}
-            />
+          <div
+            className={`project-cover project-cover-${project.tone} ${featured ? 'project-cover-featured' : ''}`}
+          >
+            <span className="project-cover-label">
+              {project.detail.category}
+            </span>
+            <div className="project-browser-frame">
+              <div className="project-browser-bar">
+                <i />
+                <i />
+                <i />
+                <span>{project.company.split(' · ')[0]}</span>
+              </div>
+              <Image
+                unoptimized
+                className="w-full object-cover object-top"
+                src={
+                  animate && project.animation
+                    ? project.animation
+                    : project.image
+                }
+                alt={`${project.title} 프로젝트 화면`}
+                width={1600}
+                height={1000}
+              />
+            </div>
           </div>
         )}
         <div className="flex flex-1 flex-col p-6 lg:p-8">
@@ -64,6 +87,19 @@ export function ProjectCard({
               </span>
             ))}
           </div>
+          <button
+            type="button"
+            onClick={onOpen}
+            aria-haspopup="dialog"
+            aria-label={`${project.title} 상세 보기`}
+            className="project-open mt-7 flex items-center justify-between border-t border-zinc-200 pt-5 text-sm font-medium dark:border-zinc-800"
+          >
+            프로젝트 자세히 보기{' '}
+            <ArrowUpRight
+              size={19}
+              className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </button>
         </div>
       </article>
     </Reveal>
