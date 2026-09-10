@@ -36,7 +36,7 @@ export function ProjectCard({
               </div>
               <Image
                 unoptimized
-                className="w-full object-cover object-top"
+                className={`w-full object-cover object-top ${project.blur ? 'blur-[5px]' : ''}`}
                 src={assetPath(
                   animate && project.animation
                     ? project.animation
@@ -65,6 +65,23 @@ export function ProjectCard({
           <p className="max-w-4xl flex-1 leading-7 text-zinc-600 dark:text-zinc-400">
             {project.summary}
           </p>
+          {project.scope && (
+            <div className="mt-6">
+              <h4 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                담당한 작업
+              </h4>
+              <ul className="mt-3 space-y-2 text-sm leading-7 text-zinc-600 dark:text-zinc-400">
+                {project.scope.map((item) => (
+                  <li className="flex gap-3" key={item}>
+                    <span aria-hidden="true" className="shrink-0">
+                      ·
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <ul className="my-6 flex flex-wrap gap-x-6 gap-y-2 border-t border-zinc-200 dark:border-zinc-800 pt-5 text-sm">
             {project.metrics.map((metric) => (
               <li className="flex items-start gap-2" key={metric}>

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
 import { SectionHeading } from './shared'
 import { Reveal } from './reveal'
 
@@ -8,9 +8,7 @@ export function ContactSection() {
       className="mx-auto w-full max-w-6xl px-5 sm:px-8 scroll-mt-2 pt-18 pb-16 sm:pt-28 sm:pb-24"
       id="contact"
     >
-      <SectionHeading description="채용 제안이나 프로젝트에 관해 나누고 싶은 이야기가 있다면 편하게 연락해 주세요.">
-        Get In Touch
-      </SectionHeading>
+      <SectionHeading>Get In Touch</SectionHeading>
       <Reveal>
         <div className="flex flex-col items-center gap-5">
           <div className="flex flex-wrap justify-center gap-3">
@@ -40,13 +38,6 @@ export function ContactSection() {
               <Linkedin size={18} aria-hidden="true" /> LinkedIn
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
-            <button
-              className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-3 rounded-lg border px-5 py-2.5 text-sm transition duration-200 hover:-translate-y-0.5 motion-reduce:translate-y-0 motion-reduce:scale-100 border-zinc-200 bg-white hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
-              type="button"
-              disabled
-            >
-              <Download size={16} /> 이력서 준비 중
-            </button>
           </div>
           <a
             className="mt-10 text-sm text-zinc-600 dark:text-zinc-400 transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"

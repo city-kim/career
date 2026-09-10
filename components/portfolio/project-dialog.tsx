@@ -11,12 +11,10 @@ export function ProjectDialog({
   project,
   onClose,
   animate,
-  onToggleAnimation,
 }: {
   project: Project
   onClose: () => void
   animate: boolean
-  onToggleAnimation: () => void
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   useEffect(() => {
@@ -73,20 +71,16 @@ export function ProjectDialog({
         <p className="project-dialog-category">{project.detail.category}</p>
         <h2 id={`project-title-${project.no}`}>{project.title}</h2>
         <p className="project-dialog-summary">{project.summary}</p>
+        {project.detail.role && (
+          <div className="mt-6 border-l-2 border-zinc-400 pl-4">
+            <p className="text-sm font-medium">담당 역할</p>
+            <p className="project-dialog-summary mt-2">{project.detail.role}</p>
+          </div>
+        )}
         <div className="project-dialog-meta">
           <span>{project.company}</span>
           <span>{project.period}</span>
         </div>
-      </div>
-      <div className="px-7 pb-4 sm:px-12">
-        <button
-          type="button"
-          aria-pressed={animate}
-          onClick={onToggleAnimation}
-          className="rounded-full border border-zinc-300 px-4 py-2 text-sm dark:border-zinc-700"
-        >
-          {animate ? '움직이는 캡처 끄기' : '움직이는 캡처 켜기'}
-        </button>
       </div>
       {(
         project.detail.screenshots ??
@@ -95,6 +89,7 @@ export function ProjectDialog({
               {
                 image: project.image,
                 animation: project.animation,
+                blur: project.blur,
                 label: `${project.title} 화면`,
                 caption: project.detail.caption,
               },
@@ -107,6 +102,7 @@ export function ProjectDialog({
           )}
           <Image
             unoptimized
+            className={screenshot.blur ? 'blur-[5px]' : undefined}
             src={assetPath(
               animate && screenshot.animation
                 ? screenshot.animation
@@ -117,7 +113,7 @@ export function ProjectDialog({
             alt={screenshot.label}
             sizes="(max-width: 768px) 100vw, 960px"
           />
-          <figcaption>{screenshot.caption}</figcaption>
+          {screenshot.caption && <figcaption>{screenshot.caption}</figcaption>}
         </figure>
       ))}
       <div className="project-dialog-body">
@@ -134,6 +130,11 @@ export function ProjectDialog({
               <div key={work.title}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <div>
+                  {work.area && (
+                    <p className="mb-2 text-xs text-zinc-500 dark:text-zinc-400">
+                      {work.area}
+                    </p>
+                  )}
                   <h4>{work.title}</h4>
                   <p>{work.description}</p>
                 </div>

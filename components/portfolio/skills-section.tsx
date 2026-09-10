@@ -8,9 +8,7 @@ export function SkillsSection() {
       className="mx-auto w-full max-w-6xl px-5 sm:px-8 scroll-mt-2 pt-18 pb-6 sm:pt-28"
       id="stack"
     >
-      <SectionHeading description="실제 프로젝트에서 사용한 기술과 도구입니다.">
-        Skills &amp; Technologies
-      </SectionHeading>
+      <SectionHeading>Skills &amp; Technologies</SectionHeading>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map(({ group, items }, index) => (
           <Reveal
