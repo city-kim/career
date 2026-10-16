@@ -10,7 +10,7 @@ const roles = [
 
 export function TypingRole() {
   const [roleIndex, setRoleIndex] = useState(0)
-  const [text, setText] = useState('')
+  const [text, setText] = useState(roles[0])
   const [deleting, setDeleting] = useState(false)
 
   useEffect(() => {
@@ -23,12 +23,12 @@ export function TypingRole() {
     const finishedTyping = !deleting && text === role
     const finishedDeleting = deleting && text === ''
     const delay = finishedTyping
-      ? 1450
+      ? 2200
       : finishedDeleting
         ? 260
         : deleting
           ? 42
-          : 82
+          : 70
 
     const timer = window.setTimeout(() => {
       if (finishedTyping) {
@@ -52,7 +52,7 @@ export function TypingRole() {
 
   return (
     <p
-      className="mt-5 min-h-11 animate-rise text-base leading-snug font-medium text-zinc-600 motion-reduce:animate-none sm:text-3xl lg:text-4xl dark:text-zinc-400 [animation-delay:150ms]"
+      className="mt-5 min-h-11 animate-rise text-lg leading-snug font-medium text-zinc-600 motion-reduce:animate-none sm:text-3xl lg:text-4xl dark:text-zinc-400 [animation-delay:150ms]"
       aria-label="프론트엔드 개발자. React, Next.js, TypeScript로 웹 서비스를 개발합니다."
     >
       <span aria-hidden="true">{text}</span>

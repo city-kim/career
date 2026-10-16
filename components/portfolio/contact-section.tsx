@@ -3,6 +3,7 @@ import { SectionHeading } from './shared'
 import { Reveal } from './reveal'
 
 export function ContactSection() {
+  // TODO: Add the resume download link after the owner uploads the final PDF.
   return (
     <section
       className="mx-auto w-full max-w-6xl px-5 sm:px-8 scroll-mt-2 pt-18 pb-16 sm:pt-28 sm:pb-24"

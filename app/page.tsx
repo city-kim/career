@@ -8,7 +8,10 @@ import { SkillsSection } from '@/components/portfolio/skills-section'
 
 export default function HomePage() {
   return (
-    <main className="paper-site relative isolate overflow-clip">
+    <main
+      id="main-content"
+      className="paper-site relative isolate overflow-clip"
+    >
       <PortfolioNavigation />
       <HeroSection />
       <AboutSection />

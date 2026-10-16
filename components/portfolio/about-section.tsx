@@ -15,30 +15,17 @@ export function AboutSection() {
           <div className="flex flex-col gap-6 text-base leading-8 text-zinc-600 dark:text-zinc-400">
             <p>
               <strong className="font-medium text-zinc-900 dark:text-zinc-100">
-                프론트엔드 개발 10년차입니다.
+                2016년 웹 에이전시에서 개발을 시작했습니다.
               </strong>{' '}
-              웹 에이전시에서 시작해 메시징 서비스, 커머스, 게임 플랫폼을
-              개발했습니다. 고객용 웹 서비스와 사내 운영 도구를 함께 다루며,
-              신규 개발과 기존 서비스 개선을 병행해 왔습니다.
+              알리고에서는 문자·카카오톡 발송 서비스를, 프레시지에서는 쇼핑몰과
+              사내 시스템을 개발했습니다. 보이저에서는 프론트엔드를 혼자 맡아
+              웹사이트와 게임 운영 도구를 만들었습니다.
             </p>
-            <p>
-              최근에는 보이저에서 프론트엔드를 혼자 맡아 다섯 개 프로젝트를
-              병행했습니다. 여러 운영 도구에서 함께 쓰는 컴포넌트와 인증,
-              레이아웃을 공통 패키지로 만들었습니다. 백엔드 개발자와 API와
-              데이터 구조를 검토하고, 운영팀이 수동으로 만들던 월간 리포트를
-              자동화했습니다.
-            </p>
-            <p>
-              프레시지에서는 프론트엔드 3인 팀에서 허닭몰을 자체 플랫폼으로
-              재구축했습니다. 공통 모듈과 배포·테스트 환경을 구성하고, 운영자가
-              기획전을 직접 만들고 예약할 수 있는 전시 빌더를 개발했습니다.
-            </p>
-            <p className="border-l-4 border-zinc-400 pl-5 text-zinc-900 dark:text-zinc-100">
-              같은 작업이 반복되면 줄일 방법을 찾습니다. 수동으로 만들던
-              리포트를 자동화하거나, 여러 서비스에서 쓰는 기능을 공통으로
-              정리하는 일을 해 왔습니다. 요청을 받으면 먼저 목적과 불편을
-              확인하고, 구현에 제약이 있을 때는 이유와 가능한 대안을 함께
-              설명합니다.
+            <p className="border-l-2 border-zinc-300 pl-5 text-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+              같은 작업을 반복하고 있다면 도구로 줄일 수 있는지 살펴봅니다.
+              운영팀이 매번 개발팀에 요청하던 전시 작업은 직접 편집할 수 있게
+              했고, 손으로 작성하던 엑셀 리포트는 자동으로 만들도록 했습니다.
+              구현이 어려운 요청은 이유를 설명하고 가능한 방법을 함께 찾습니다.
             </p>
           </div>
         </Reveal>
@@ -58,9 +45,9 @@ export function AboutSection() {
               }
               key={experience.company}
             >
-              <article className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl border border-zinc-200 bg-white transition duration-300 hover:border-zinc-400 hover:ring-2 hover:ring-zinc-400/25 hover:ring-offset-2 hover:ring-offset-white dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-400 dark:hover:ring-offset-zinc-950">
+              <article className="portfolio-surface flex items-start gap-4 rounded-2xl p-5 sm:p-6">
                 <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-zinc-400/10 text-zinc-500 dark:text-zinc-400">
-                  <BriefcaseBusiness size={22} />
+                  <BriefcaseBusiness size={22} aria-hidden="true" />
                 </span>
                 <div>
                   <h3 className="font-heading text-lg font-semibold">
