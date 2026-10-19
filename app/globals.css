@@ -210,6 +210,58 @@
   gap: 24px;
   margin-top: 28px;
 }
+.project-coverage {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--dialog-line);
+  border-radius: 12px;
+}
+.project-coverage ul {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+.project-coverage li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 16px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.project-coverage li span:last-child {
+  color: var(--dialog-muted);
+  font-variant-numeric: tabular-nums;
+}
+.project-case-studies {
+  display: grid;
+  gap: 24px;
+}
+.project-case-studies article {
+  padding: 24px;
+  border: 1px solid var(--dialog-line);
+  border-radius: 14px;
+}
+.project-case-area {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--dialog-muted);
+}
+.project-case-studies dl {
+  display: grid;
+  gap: 18px;
+  margin-top: 20px;
+}
+.project-case-studies dt {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.project-case-studies dd {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--dialog-muted);
+}
 .project-contributions > div {
   display: flex;
   gap: 20px;
@@ -306,6 +358,10 @@
   }
   .project-dialog-body {
     padding: 10px 22px 26px;
+  }
+  .project-case-studies article,
+  .project-coverage {
+    padding: 18px;
   }
   .project-architecture {
     grid-template-columns: 1fr;

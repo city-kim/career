@@ -82,48 +82,57 @@ export function ProjectDialog({
           <span>{project.period}</span>
         </div>
       </div>
-      {(
-        project.detail.screenshots ??
-        (project.image
-          ? [
-              {
-                image: project.image,
-                animation: project.animation,
-                blur: project.blur,
-                label: `${project.title} 화면`,
-                caption: project.detail.caption,
-              },
-            ]
-          : [])
-      ).map((screenshot) => (
-        <figure className="project-dialog-figure" key={screenshot.image}>
-          {project.detail.screenshots && (
-            <h3 className="project-screenshot-label">{screenshot.label}</h3>
-          )}
-          <Image
-            unoptimized
-            className={screenshot.blur ? 'blur-[5px]' : undefined}
-            src={assetPath(
-              animate && screenshot.animation
-                ? screenshot.animation
-                : screenshot.image,
-            )}
-            width={1440}
-            height={1000}
-            alt={screenshot.label}
-            sizes="(max-width: 768px) 100vw, 960px"
-          />
-          {screenshot.caption && <figcaption>{screenshot.caption}</figcaption>}
-        </figure>
-      ))}
       <div className="project-dialog-body">
         <section>
-          <p className="project-dialog-kicker">01 / CONTEXT</p>
+          <p className="project-dialog-kicker">CONTEXT</p>
           <h3>프로젝트 배경</h3>
           <p>{project.detail.background}</p>
+          {project.coverage.length > 1 && (
+            <div className="project-coverage">
+              <h4>프로젝트와 기간</h4>
+              <ul>
+                {project.coverage.map((item) => (
+                  <li key={item.name}>
+                    <span>{item.name}</span>
+                    <span>{item.period}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
+        {project.detail.caseStudies && (
+          <section>
+            <p className="project-dialog-kicker">DECISIONS</p>
+            <h3>어려웠던 문제와 선택의 이유</h3>
+            <div className="project-case-studies">
+              {project.detail.caseStudies.map((study) => (
+                <article key={study.title}>
+                  {study.area && (
+                    <p className="project-case-area">{study.area}</p>
+                  )}
+                  <h4>{study.title}</h4>
+                  <dl>
+                    <div>
+                      <dt>문제와 제약</dt>
+                      <dd>{study.problem}</dd>
+                    </div>
+                    <div>
+                      <dt>선택한 방법과 이유</dt>
+                      <dd>{study.decision}</dd>
+                    </div>
+                    <div>
+                      <dt>결과와 검증</dt>
+                      <dd>{study.result}</dd>
+                    </div>
+                  </dl>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
         <section>
-          <p className="project-dialog-kicker">02 / CONTRIBUTION</p>
+          <p className="project-dialog-kicker">CONTRIBUTION</p>
           <h3>담당 작업과 구현 내용</h3>
           <div className="project-contributions">
             {project.detail.work.map((work, index) => (
@@ -142,9 +151,53 @@ export function ProjectDialog({
             ))}
           </div>
         </section>
+        {(project.image || project.detail.screenshots?.length) && (
+          <section>
+            <p className="project-dialog-kicker">SCREENS</p>
+            <h3>구현 화면</h3>
+            {(
+              project.detail.screenshots ??
+              (project.image
+                ? [
+                    {
+                      image: project.image,
+                      animation: project.animation,
+                      blur: project.blur,
+                      label: `${project.title} 화면`,
+                      caption: project.detail.caption,
+                    },
+                  ]
+                : [])
+            ).map((screenshot) => (
+              <figure className="project-dialog-figure" key={screenshot.image}>
+                {project.detail.screenshots && (
+                  <h3 className="project-screenshot-label">
+                    {screenshot.label}
+                  </h3>
+                )}
+                <Image
+                  unoptimized
+                  className={screenshot.blur ? 'blur-[5px]' : undefined}
+                  src={assetPath(
+                    animate && screenshot.animation
+                      ? screenshot.animation
+                      : screenshot.image,
+                  )}
+                  width={1440}
+                  height={1000}
+                  alt={screenshot.label}
+                  sizes="(max-width: 768px) 100vw, 960px"
+                />
+                {screenshot.caption && (
+                  <figcaption>{screenshot.caption}</figcaption>
+                )}
+              </figure>
+            ))}
+          </section>
+        )}
         <section className="project-architecture">
           <div>
-            <p className="project-dialog-kicker">03 / STACK</p>
+            <p className="project-dialog-kicker">STACK</p>
             <h3>기술과 구성</h3>
           </div>
           <ul>

@@ -32,7 +32,7 @@ export function ProjectCard({
                 <i />
                 <i />
                 <i />
-                <span>{project.company.split(' · ')[0]}</span>
+                <span>{project.company.split(', ')[0]}</span>
               </div>
               <Image
                 unoptimized
@@ -74,7 +74,7 @@ export function ProjectCard({
                 {project.scope.map((item) => (
                   <li className="flex gap-3" key={item}>
                     <span aria-hidden="true" className="shrink-0">
-                      ·
+                      –
                     </span>
                     <span>{item}</span>
                   </li>

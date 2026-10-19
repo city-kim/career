@@ -23,6 +23,10 @@ export function ProjectsSection() {
       id="work"
     >
       <SectionHeading>Featured Projects</SectionHeading>
+      <p className="mb-8 max-w-3xl text-base leading-8 text-zinc-600 dark:text-zinc-400">
+        커머스, SaaS, 운영 도구에서 해결한 문제와 구현 과정입니다. 각 프로젝트를
+        열면 담당 범위와 기술 선택의 이유, 결과를 확인할 수 있습니다.
+      </p>
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard

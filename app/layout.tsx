@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   metadataBase,
   title: '프론트엔드 개발자 | 포트폴리오',
   description:
-    '커머스, 메시징 서비스, 게임 운영 도구를 개발해 온 10년차 프론트엔드 개발자의 경력과 프로젝트를 소개합니다.',
+    '커머스, 메시징 서비스, 게임 운영 도구와 근태관리 SaaS를 개발한 시니어 프론트엔드 개발자 김찬태의 경력과 문제 해결 사례를 소개합니다.',
   openGraph: {
     title: '프론트엔드 개발자 | 포트폴리오',
     description:
-      '허닭몰 커머스 구축, 공통 패키지 개발, 게임 운영 리포트 자동화 프로젝트를 소개합니다.',
+      '허닭몰 전시 빌더, TEMPO 근태관리 SaaS, 운영 도구 자동화에서 해결한 문제와 기술 선택의 이유를 소개합니다.',
     type: 'website',
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '프론트엔드 개발자 | 포트폴리오',
     description:
-      '허닭몰 커머스 구축, 공통 패키지 개발, 게임 운영 리포트 자동화 프로젝트를 소개합니다.',
+      '허닭몰 전시 빌더, TEMPO 근태관리 SaaS, 운영 도구 자동화에서 해결한 문제와 기술 선택의 이유를 소개합니다.',
     images: [assetPath('/og.png')],
   },
 }

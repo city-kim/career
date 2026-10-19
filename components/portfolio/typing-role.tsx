@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 
 const roles = [
   'Frontend Developer',
-  'React · Next.js · TypeScript',
-  'Commerce · Platform · Web',
+  'React, Next.js, TypeScript',
+  'Commerce, Platform, SaaS',
 ]
 
 export function TypingRole() {

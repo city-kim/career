@@ -19,9 +19,9 @@ export function HeroSection() {
         </h1>
         <TypingRole />
         <p className="mx-auto mt-6 max-w-2xl animate-rise text-base leading-8 text-zinc-600 motion-reduce:animate-none sm:text-lg dark:text-zinc-400 [animation-delay:200ms]">
-          커머스부터 메시징 서비스, 게임 운영 도구까지.
-          <br className="hidden sm:block" /> 9년 동안 웹 서비스를 만들고 운영해
-          온 프론트엔드 개발자입니다.
+          커머스, 메시징 서비스, 게임 운영 도구와 SaaS까지.
+          <br className="hidden sm:block" /> 제품의 개발 기반과 운영 흐름을
+          개선하는 시니어 프론트엔드 개발자입니다.
         </p>
         <div className="mt-10 flex animate-rise justify-center gap-4 motion-reduce:animate-none [animation-delay:300ms]">
           <a
